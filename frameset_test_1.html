@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            frameset test
+        </title>
+        <style>
+            body {
+                background-image: url(bcimg.jpg);
+                background-attachment: fixed;
+                background-size: cover;
+            }
+
+            iframe {
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                transition: transform 1.3s ease; box-shadow: 2s ease;
+            }
+
+            iframe:hover {
+                box-shadow: 0px 0px 25px white;
+                transform: translateY(-5px);
+            }
+
+            
+
+
+        </style>
+    </head>
+    <iframe src ="frame_test_2.html"
+        title ="test"
+        width ="1255"
+        height ="200"
+        style ="border: 1px solid rgb(208, 0, 0); border-radius: 8px;"
+    ></iframe>
+    <iframe src ="frame_test_3.html"
+        title ="side-test"
+        width ="200"
+        height ="500"
+        style="border: 1px solid red;border-radius: 8px;"
+    ></iframe>
+    <iframe src ="frame_test_4.html"
+        title ="parallel-test"
+        width ="200"
+        height ="500"
+        style ="border: 1px solid red;border-radius: 8px;"
+</html>
