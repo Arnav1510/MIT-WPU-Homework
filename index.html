@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practical 8 | Images, Backgrounds &amp; Links</title>
+  <style>
+    :root { --ink: #17324d; --blue: #176b87; --coral: #ef765d; --paper: #fffdf8; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Segoe UI", Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #e7f1ef; /* 4. Webpage background color */
+      /* 6. Webpage background image (soft decorative pattern) */
+      background-image: radial-gradient(circle at 1px 1px, rgba(23,107,135,.13) 1px, transparent 0);
+      background-size: 24px 24px;
+    }
+    .page { width: min(100% - 32px, 1050px); margin: 36px auto; }
+    header, main, footer { background: var(--paper); border-radius: 20px; box-shadow: 0 12px 36px rgba(23,50,77,.10); }
+    header { padding: 38px clamp(22px, 6vw, 64px); }
+    .eyebrow { color: var(--blue); text-transform: uppercase; letter-spacing: .16em; font-size: .78rem; font-weight: 800; }
+    h1 { margin: 8px 0 14px; padding: 10px 16px; border: 3px solid var(--coral); border-radius: 12px; display: inline-block; font-size: clamp(2rem, 6vw, 3.4rem); line-height: 1.15; }
+    h2 { color: var(--blue); margin-top: 0; }
+    main { margin-top: 18px; padding: clamp(22px, 5vw, 48px); }
+    section { padding: 26px 0; border-bottom: 1px solid #dce8e5; }
+    section:last-child { border-bottom: 0; }
+    .intro { max-width: 760px; }
+    .sample {
+      padding: 18px 22px; border-radius: 12px;
+      background-color: #fff0d9; /* 5. Paragraph background color */
+      /* 7. Paragraph background image: subtle warm color wash */
+      background-image: linear-gradient(110deg, rgba(255,240,217,.96), rgba(255,240,217,.78));
+      border-left: 5px solid var(--coral);
+    }
+    .photo { display: block; object-fit: cover; border-radius: 15px; box-shadow: 0 8px 22px rgba(23,50,77,.16); }
+    .left-image { margin: 18px auto 18px 0; }
+    .center-image { margin: 18px auto; }
+    .right-image { margin: 18px 0 18px auto; }
+    .image-link { display: block; width: fit-content; margin-left: auto; margin-right: auto; border-radius: 15px; }
+    .image-link:focus-visible { outline: 4px solid var(--coral); outline-offset: 5px; }
+    a { color: #a23826; font-weight: 700; }
+    a:visited { color: #71408f; }
+    a:hover { color: #087b69; }
+    a:focus-visible { outline: 3px solid var(--coral); outline-offset: 3px; }
+    .note { color: #476174; font-size: .94rem; }
+    footer { margin-top: 18px; padding: 18px 26px; text-align: center; color: #476174; }
+    @media (max-width: 560px) { .photo { max-width: 100%; height: auto; } .page { width: min(100% - 20px, 1050px); margin: 10px auto; } }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="eyebrow">HTML &amp; CSS · Practical 8</div>
+      <h1>Images, backgrounds &amp; links</h1>
+      <p class="intro">This single-page example demonstrates image attributes, image alignment, a clickable image, page and paragraph backgrounds, a heading border, and custom hyperlink colors.</p>
+    </header>
+    <main>
+      <section>
+        <h2>1 · Image attributes</h2>
+        <p class="sample">This paragraph has its own background color and a soft background image. The image below uses <code>src</code>, descriptive <code>alt</code>, <code>width</code>, and <code>height</code> attributes.</p>
+        <img class="photo left-image" src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&amp;fit=crop&amp;w=900&amp;h=540&amp;q=85" alt="Mountain lake reflecting forested hills beneath a cloudy sky" width="450" height="270">
+      </section>
+      <section>
+        <h2>2 · Align images left, center &amp; right</h2>
+        <p class="note">Each image has a fixed display size; CSS margins place it at the left, center, or right of the content area.</p>
+        <img class="photo left-image" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&amp;fit=crop&amp;w=720&amp;h=420&amp;q=85" alt="Sunlit green hills beneath a wide blue sky, aligned left" width="360" height="210">
+        <img class="photo center-image" src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&amp;fit=crop&amp;w=720&amp;h=420&amp;q=85" alt="Golden sunrise over a misty landscape, aligned center" width="360" height="210">
+        <img class="photo right-image" src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&amp;fit=crop&amp;w=720&amp;h=420&amp;q=85" alt="Deer standing in a sunlit meadow, aligned right" width="360" height="210">
+      </section>
+      <section>
+        <h2>3 · Image as a hyperlink</h2>
+        <p>Click the photograph to open the <a href="https://en.wikipedia.org/wiki/Nature" target="_blank" rel="noopener noreferrer">Nature article</a>. The whole image is inside an anchor tag.</p>
+        <a class="image-link" href="https://en.wikipedia.org/wiki/Nature" target="_blank" rel="noopener noreferrer" aria-label="Open the Nature article in a new tab">
+          <img class="photo" src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&amp;fit=crop&amp;w=900&amp;h=540&amp;q=85" alt="Sunlight filtering through a lush green forest" width="450" height="270">
+        </a>
+      </section>
+      <section>
+        <h2>4 · Link colors</h2>
+        <p>Hyperlinks have custom default, visited, and hover colors. Try this <a href="https://www.example.com/">sample link</a> and move the pointer over it.</p>
+      </section>
+    </main>
+    <footer>Practical 8 · Save this file as <strong>index.html</strong> and open it in a web browser.</footer>
+  </div>
+</body>
+</html>
