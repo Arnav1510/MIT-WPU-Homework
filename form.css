@@ -1,0 +1,30 @@
+.form {
+    text-align: center;
+    height: 450px;
+    color:aqua;
+    border-radius: 8px;
+    padding: 14px;
+    font-size: 30px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    margin-left: 20px;
+}
+body {
+    background-image: url(bcimg.jpg);
+    background-attachment:fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+}
+.btn {
+    font-size: 30px;
+    border-radius: 6px;
+}
+#txt {
+    padding: 0px;
+    font-size: 30px;
+    border-radius: 6px;
+}
+.opt {
+    margin-left: 5px;
+}
